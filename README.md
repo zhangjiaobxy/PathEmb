@@ -6,7 +6,7 @@ PathEmb 1.0 is a Python package.
 This package includes PathEmb 1.0 Python package and related scripts and files for the following paper:
 
 PathEmb: Random Walk based Document Embedding for Global Pathway Similarity Search
-(Jiao Zhang, Sam Kwong, and Ka-Chun Wong)
+(Jiao Zhang, Sam Kwong, Guangming Liu, and Ka-Chun Wong)
 
 
 CONTAINS:
