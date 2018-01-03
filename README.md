@@ -123,6 +123,8 @@ HOW TO USE
 	$ cd /PathEmb/src
 	
 	$ chmod +x *
+	
+	$ python
 
 	$ import PathEmb
 
