@@ -102,15 +102,15 @@ if not os.path.exists('./../data/output/allResult/'):  # all the networks
 topk_perc = int(math.ceil(topk/100 * db_size))  # the number of the topk networks
 q_test_size = len(out_df_save.q_name.unique())  # the number of query networks 
 for q in range(0,q_test_size):  # get top k similar networks against each query network
-	out_df_e = (out_df_save[inc:inc+db_size]).sort(['predictions'],ascending=False)[:topk_perc]
+	out_df_e = (out_df_save[inc:inc+db_size]).sort_values(['predictions'],ascending=False)[:topk_perc]
 	inc = inc + db_size
 	out_df_topk = out_df_topk.append(out_df_e)
-out_df_topk = out_df_topk.sort(['q_name'],ascending=True)
+out_df_topk = out_df_topk.sort_values(['q_name'],ascending=True)
 out_df_topk.to_csv('./../data/output/csvFea_'+label_file.strip().replace('.txt','_top'+str(topk)+'%.csv') , header=True, cols=['q_name','db_name',label,'predictions'], index = False)  # top k similar network output file
 
 ########################## simpson overlap ##########################################
 # save all predictions
-out_df_save = out_df_save.sort(['q_name'],ascending=True)
+out_df_save = out_df_save.sort_values(['q_name'],ascending=True)
 out_df_save.to_csv('./../data/output/allResult/'+label_file.strip().replace('.txt','.csv'), header=True, cols=['q_name','db_name',label,'predictions'], index = False)
 
 ol_f = open('./../data/output/allResult/'+label_file.strip().replace('.txt','.csv'), 'r')
